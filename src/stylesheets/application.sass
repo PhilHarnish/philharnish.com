@@ -1,0 +1,110 @@
+/*Source available online http://github.com/PhilHarnish/philharnish.com/
+!main_fg = #000
+!main_bg = #FFFAEE
+!highlight = #FFF
+!contrast = #1C252D
+!footer_bg = #283E28
+!column_width = 600px
+!nav_height = 283px
+!spacing = 1em
+
+html, body, p, div, ol
+  :margin 0
+  :padding 0
+
+body
+  :font 15pt Garamond, Georgia, "Book Antiqua", "Palatino Linotype", "Book Antiqua", Palatino, Times, serif
+  :background = !main_bg
+  :color = !main_fg
+
+#header, #nav, #content, #footer
+  :width = !column_width
+  :margin = 0 auto
+
+#header
+  :width = !column_width - 20px
+  :padding = 10px
+  :background = !contrast url(moon.jpg) "no-repeat" 100% 0
+  :color = !highlight
+  :font 40px
+  :font-weight normal
+
+#nav
+  :height = !nav_height
+  :margin = !spacing auto
+  :text-align center
+  :background = !main_bg url(bg.jpg) "no-repeat" 0 0
+  :color = !main_fg
+  li
+    :width = !column_width / 3
+    :float left
+    :list-style none
+    :display inline
+    a
+      :display block
+      :position relative
+      :height = !nav_height
+      :font-size 40px
+      :text-decoration none
+      &:hover
+        :background-color = !highlight
+        :color = !main_fg
+      span
+        :width = !column_width / 3
+        :display block
+        :position absolute
+        :top = !spacing * .8
+        :text-align center
+        :background-color = !highlight
+        :color = !main_fg
+      span.location
+        :text-indent -5000px
+        :top 0
+        :height 100%
+        :opacity 0.3
+        :filter alpha(opacity=30)
+
+#content
+  :background = !main_bg url(grass.gif) "no-repeat" 100% 100%
+  p
+    :text-align justify
+    :padding = 0 0 !spacing 0
+    :position relative
+    em
+      :color = !footer_bg
+      :font-weight bold
+    abbr
+      :border none
+    a
+      :text-decoration none
+      :color = !main_fg
+    *[title]:after
+      // Uncomment for " " instead of "*"
+      //:content "\a0"
+      :content "*"
+      :font small monospace
+      :vertical-align top
+    &:hover *[title]:after
+      :content "?"
+    *[title]:hover:before
+      :content attr(title)
+      :position absolute
+      :right 100%
+      :width = !column_width/3
+      :text-align right
+      :border-right = 1px solid !main_fg
+      :padding = !spacing
+      :margin = -!spacing !spacing 0 0
+
+#footer
+  :background = !footer_bg
+  :color = !highlight
+  :font-size small
+  &:hover a, a:hover
+    :text-decoration underline
+  p
+    :padding = !spacing
+    a
+      :background = !footer_bg
+      :color = !highlight
+      :text-decoration none

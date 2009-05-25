@@ -1,0 +1,39 @@
+-# Main layout for each page. current_page identifies page (eg: index.html).
+-source =   "http://github.com/PhilHarnish/philharnish.com/"
+-license =  "http://creativecommons.org/licenses/publicdomain/"
+-tumble =   "http://philharnish.tumblr.com/"
+-resume =   "http://www.linkedin.com/in/philharnish"
+-email =    "mailto:philharnish@gmail.com"
+-myid =     "http://philharnish.myopenid.com/"
+-idserver = "http://www.myopenid.com/server/"
+-current_page_name = current_page.split('/').last.split('.').first
+-pages = ["index", "means", "method"]
+-titles = {"index"=>"the motive,", "means"=>"means,", "method"=>"&amp; method."}
+!!! XML
+!!! Strict
+/ Source available online http://github.com/PhilHarnish/philharnish.com/
+%html{html_attrs('en')}
+  %head
+    %title Phil Harnish
+    = stylesheets
+    %link{ :href => idserver, :rel => "openid2.provider" }
+    %link{ :href => idserver, :rel => "openid.server" }
+    %link{ :href => myid, :rel => "openid2.local_id" }
+    %link{ :href => myid, :rel => "openid.delegate" }
+    %meta{ :name => "description", |
+           :content => "Phil Harnish: The motive, means, and method."} |
+  %body{ :id => "page_#{current_page_name}" }
+    %h1#header Phil Harnish
+    %ol#nav
+      - pages.each do |page_name|
+        %li{ :id => page_name }
+          %a{ :href => "#{page_name}.html" }
+            - if page_name == current_page_name
+              %span.location &raquo;
+            %span= titles[page_name]
+    #content
+      = yield
+    #footer
+      :markdown
+        [email](#{email}), [resume](#{resume}), [tumble](#{tumble})
+        ([source](#{source}), [no rights reserved](#{license}))
