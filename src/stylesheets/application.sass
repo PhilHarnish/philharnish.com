@@ -78,6 +78,8 @@ body
     a
       :text-decoration none
       :color = !main_fg
+    *[title]:hover .sidenote
+      :display block
     *[title]:after
       // Uncomment for " " instead of "*"
       //:content "\a0"
@@ -86,16 +88,18 @@ body
       :vertical-align top
     &:hover *[title]:after
       :content "?"
-    *[title]:hover:before
-      :content attr(title)
-      :display block
-      :position absolute
-      :right 100%
-      :width = !column_width/3
-      :text-align right
-      :border-right = 1px solid !main_fg
-      :padding = !spacing
-      :margin = -!spacing !spacing 0 0
+
+  .sidenote
+    :display none
+    :position absolute
+    :right 100%
+    :width = !column_width/3
+    :text-align right
+    :border-right = 1px solid !main_fg
+    :padding = !spacing
+    :margin = -!spacing * 2.2 !spacing 0 0
+    small
+      :font-size 90%
 
 #footer
   :background = !footer_bg
