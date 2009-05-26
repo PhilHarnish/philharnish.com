@@ -7,6 +7,7 @@ I started this project to learn the haml and sass templating languages. In the e
 I don't expect to do very much HTML generating server side in the sort of web apps I enjoy writing. At most I would use haml to generate the client-side templates and stitch them together in a JS template engine like [pure][4].
 
 To build this site you will need the following ruby gems:
+
 * [haml][5]
 * [sass][6]
 * [staticmatic][7]
