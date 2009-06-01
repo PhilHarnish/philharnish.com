@@ -1,13 +1,18 @@
 -# Main layout for each page. current_page identifies page (eg: index.html).
--source =   "http://github.com/PhilHarnish/philharnish.com/"
--license =  "http://creativecommons.org/licenses/publicdomain/"
--tumble =   "http://philharnish.tumblr.com/"
--resume =   "http://www.linkedin.com/in/philharnish"
--email =    "mailto:philharnish@gmail.com"
--myid =     "http://philharnish.myopenid.com/"
+-email    = "mailto:philharnish@gmail.com"
+-source   = "http://github.com/PhilHarnish/philharnish.com/"
+-license  = "http://creativecommons.org/licenses/publicdomain/"
+-tumble   = "http://philharnish.tumblr.com/"
+-twitter  = "http://twitter.com/philharnish"
+-facebook = "http://www.facebook.com/people/Phil-Harnish/705652343"
+-github   = "http://github.com/PhilHarnish/"
+-flickr   = "http://www.flickr.com/photos/philharnish/"
+-ffeed    = "http://friendfeed.com/philharnish"
+-resume   = "http://www.linkedin.com/in/philharnish"
+-myid     = "http://philharnish.myopenid.com/"
 -idserver = "http://www.myopenid.com/server/"
 -current_page_name = current_page.split('/').last.split('.').first
--pages = ["index", "means", "method"]
+-pages  = ["index", "means", "method"]
 -titles = {"index"=>"the motive,", "means"=>"means,", "method"=>"&amp; method."}
 !!! XML
 !!! Strict
@@ -16,14 +21,14 @@
   %head
     %title Phil Harnish
     = stylesheets
-    = javascripts('jquery', 'sidenote')
+    = javascripts('jquery', 'extra')
     %link{ :href => idserver, :rel => "openid2.provider" }
     %link{ :href => idserver, :rel => "openid.server" }
     %link{ :href => myid, :rel => "openid2.local_id" }
     %link{ :href => myid, :rel => "openid.delegate" }
     %meta{ :name => "description", |
            :content => "Phil Harnish: The motive, means, and method."} |
-  %body{ :id => "page_#{current_page_name}" }
+  %body
     %h1#header Phil Harnish
     %ol#nav
       - pages.each do |page_name|
@@ -35,6 +40,17 @@
     #content
       = yield
     #footer
-      :markdown
-        [email](#{email}), [resume](#{resume}), [tumble log](#{tumble})
-        ([source](#{source}), [no rights reserved](#{license}))
+      %p#less
+        :plain
+          <a href="#{email}" rel="me">email</a>,
+          <a href="#{resume}" rel="me">resume</a>,
+          <a href="#{tumble}" rel="me">tumble log</a>
+          (<a href="#{source}">source</a>,
+          <a href="#{license}">no rights reserved</a>)
+      %p#more
+        :plain
+          <a href="#{twitter}" rel="me">twitter</a>,
+          <a href="#{facebook}" rel="me">facebook</a>,
+          <a href="#{github}" rel="me">github</a>,
+          <a href="#{flickr}" rel="me">flickr</a>,
+          <a href="#{ffeed}" rel="me">friendfeed</a>

@@ -109,6 +109,25 @@ body
     :text-decoration underline
   p
     :padding = !spacing
+    :position relative
+    &#less a#expander
+      :background = !footer_bg - #333
+      :padding = !spacing * .5 !spacing !spacing !spacing
+      :position absolute
+      :right = !spacing
+      :bottom = 0
+      :-moz-border-radius-topleft 5px
+      :-webkit-border-top-left-radius 5px
+      :-moz-border-radius-topright 5px
+      :-webkit-border-top-right-radius 5px
+    &#more
+      :margin = 0 !spacing
+      :background = !footer_bg - #333
+      :color = !main_bg
+      :-moz-border-radius-topleft = !spacing * .5
+      :-webkit-border-top-left-radius = !spacing * .5
+      a
+        :background transparent
     a
       :background = !footer_bg
       :color = !highlight
