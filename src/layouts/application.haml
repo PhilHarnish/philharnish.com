@@ -9,6 +9,8 @@
 -flickr   = "http://www.flickr.com/photos/philharnish/"
 -ffeed    = "http://friendfeed.com/philharnish"
 -resume   = "http://www.linkedin.com/in/philharnish"
+-foaf     = "/foaf.rdf"
+-foaf_inc = { :type => "application/rdf+xml", :title => "FOAF" }
 -myid     = "http://philharnish.myopenid.com/"
 -idserver = "http://www.myopenid.com/server/"
 -current_page_name = current_page.split('/').last.split('.').first
@@ -22,6 +24,7 @@
     %title Phil Harnish
     = stylesheets
     = javascripts('jquery', 'extra')
+    %link{ {:href => foaf, :rel => "meta"}, foaf_inc }
     %link{ :href => idserver, :rel => "openid2.provider" }
     %link{ :href => idserver, :rel => "openid.server" }
     %link{ :href => myid, :rel => "openid2.local_id" }

@@ -1,0 +1,23 @@
+<rdf:RDF
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+      xmlns:foaf="http://xmlns.com/foaf/0.1/"
+      xmlns:admin="http://webns.net/mvcb/">
+<foaf:PersonalProfileDocument rdf:about="">
+  <foaf:maker rdf:resource="#me"/>
+  <foaf:primaryTopic rdf:resource="#me"/>
+  <admin:generatorAgent rdf:resource="http://www.ldodds.com/foaf/foaf-a-matic"/>
+  <admin:errorReportsTo rdf:resource="mailto:leigh@ldodds.com"/>
+</foaf:PersonalProfileDocument>
+<foaf:Person rdf:ID="me">
+<foaf:name>Phil Harnish</foaf:name>
+<foaf:givenname>Phil</foaf:givenname>
+<foaf:family_name>Harnish</foaf:family_name>
+<foaf:nick>philharnish</foaf:nick>
+<foaf:mbox rdf:resource="mailto:philharnish@gmail.com"/>
+<foaf:homepage rdf:resource="http://philharnish.com"/>
+<foaf:phone rdf:resource="tel:662-626-6658"/>
+<foaf:workplaceHomepage rdf:resource="http://youtube.com/"/>
+<foaf:workInfoHomepage rdf:resource="Software Engineer"/>
+<foaf:schoolHomepage rdf:resource="http://purdue.edu/"/></foaf:Person>
+</rdf:RDF>
