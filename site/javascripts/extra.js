@@ -8,8 +8,7 @@ $(function () {
   $("#more").hide();
   $("#less").append(
     $("<a href='#more' id='expander'>more</a>").click(function() {
-      $("#expander").text("more").attr("href", "#more");
-      $("#more").show();
+     $("#more").show();
     })
   );
 });
