@@ -1,5 +1,5 @@
 $(function () {
-  // Creates sidenotes for each element with a tittle attribute.
+  // Creates sidenotes for each element with a title attribute.
   $("*[title]").each(function () {
     $(this).append($("<span>" + $(this).attr("title") + "</span>").
                    addClass('sidenote'));
